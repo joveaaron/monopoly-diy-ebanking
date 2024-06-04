@@ -23,6 +23,5 @@ It uses RFID for contactless payment and property tracking (saves in memory what
 ### Author Statement
 *I am an independent 15-year-old student from Spain who created this project as an electronics engineering challenge. This project is intended for my personal use only and not made to be financially or economically beneficious. I have made this in my free time and I will not sell or earn any kind of benefits for publishing this project.*
 
-**LICENSING**
-
+### Licensing
 This project is not intended for any type of use excluding my personal use. License has been set to "None" to avoid any kind of legal issue with the MONOPOLY™ team and/or Hasbro, Inc. or any of its subsidiaries and affiliates. I will not be held responsible for any kind of use except mine.
