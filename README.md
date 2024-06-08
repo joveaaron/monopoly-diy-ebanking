@@ -10,7 +10,7 @@ It uses RFID for contactless payment and property tracking (saves in memory what
  - RFID-RC522/HW-126/MFRC-522 (RC522-based) RFID module (1.16€)
  - 100 (at least 50) 13.56MHz ISO14443A RFID cards (11.80€)
  - Mainboard PCB (Gerber to be designed, around 6€)
- - X amount of SMD buttons, Y amount of SMD LEDs and Z amount of SMD resistors.
+ - X amount of SMD buttons (SKQGABE010), Y amount of SMD LEDs and Z amount of SMD resistors.
 
 <sup><sub>*All prices are subject to change, take it as reference only. All non-custom materials were imported from China from sites like AliExpress and similar.</sub></sup>
 ## (ChatGPT) LEGAL NOTICE
