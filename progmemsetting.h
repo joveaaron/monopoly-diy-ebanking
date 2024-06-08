@@ -15,6 +15,8 @@ static const char* PROGMEM notice4 = "For further     information,    please vis
 static const char* PROGMEM notice5 = "https://www.bit.ly/mdeb-notice";
 static const char* PROGMEM notice6 = "Or scan the QR:";
 
+
+
 enum Colors {
   BROWN, LIGHT_BLUE, MAGENTA, ORANGE, RED, YELLOW, GREEN, BLUE, SERVICE, STATION, SPECIAL
 };
@@ -25,9 +27,14 @@ typedef struct {
 
 typedef struct {
   const char* text; int16_t value; int16_t value2; uint8_t special;
-} LuckCard
+} LuckCard;
 
 #if LANGUAGE == SPANISH
+//                                                    |               |               |
+static const char* PROGMEM unfgame = "Existe una      partida sin     acabar. \xA8Quierescontinuarla?";
+static const char* PROGMEM yes = "SI";
+static const char* PROGMEM no = "NO";
+
 static const Properties PROGMEM properties[] = {
   {60, "RONDA DE VALENCIA", BROWN,2,4,10,30,90,160,250,50}, 
   {60, "PLAZA LAVAPI\x90S", BROWN,4,8,20,60,180,320,450,50},
@@ -82,7 +89,7 @@ static const LuckCard PROGMEM luckcards[] {
   {"RETROCEDE 3 CASILLAS", 0, 0, 1},
   {"AVANZA HASTA ESTACI\xA2N M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2},
   {"AVANZA HASTA CEA BERM\xA3DEZ Y 200 SI PASAS POR SALIDA", 200, 0, 3},
-  {"RESCATE POR SEGURO DE EDIFICIOS" 150, 0, 0},
+  {"RESCATE POR SEGURO DE EDIFICIOS", 150, 0, 0},
   {"VE A LA C\xA0RCEL", 0, 0, 4},
   {"VE A LA CASILLA DE SALIDA", 200, 0 ,0},
   {"ERES EL PRESIDENTE DE LA JUNTA DIRECTIVA, PAGA 50 A CADA JUGADOR", -50, 0, 5},
@@ -94,8 +101,12 @@ static const LuckCard PROGMEM luckcards[] {
   {"MULTA POR EXCESO DE VELOCIDAD", -15, 0, 0},
   {"AVANZA HASTA SERVICIO PUBLICO M\xA0S CERCANO. PAGA 10 VECES LOS DADOS", 0, 0, 7},
   {"AVANZA HASTA ESTACI\xA2 M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2}
-}
+};
 #elif LANGUAGE == UNITEDSTATES //US NAMES
+static const char* PROGMEM unfgame = "An unfinished   game exists.    Would you like  to continue it?";
+static const char* PROGMEM yes = "YES";
+static const char* PROGMEM no = "NO";
+
 static const Properties PROGMEM properties[] = {
   {60, "MEDITERRANEAN AV.", BROWN,2,4,10,30,90,160,250,50}, 
   {60, "BALTIC AV.", BROWN,4,8,20,60,180,320,450,50},
@@ -150,7 +161,7 @@ static const LuckCard PROGMEM luckcards[] {
   {"RETROCEDE 3 CASILLAS", 0, 0, 1},
   {"AVANZA HASTA ESTACI\xA2N M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2},
   {"AVANZA HASTA CEA BERM\xA3DEZ Y 200 SI PASAS POR SALIDA", 200, 0, 3},
-  {"RESCATE POR SEGURO DE EDIFICIOS" 150, 0, 0},
+  {"RESCATE POR SEGURO DE EDIFICIOS", 150, 0, 0},
   {"VE A LA C\xA0RCEL", 0, 0, 4},
   {"VE A LA CASILLA DE SALIDA", 200, 0 ,0},
   {"ERES EL PRESIDENTE DE LA JUNTA DIRECTIVA, PAGA 50 A CADA JUGADOR", -50, 0, 5},
@@ -162,8 +173,12 @@ static const LuckCard PROGMEM luckcards[] {
   {"MULTA POR EXCESO DE VELOCIDAD", -15, 0, 0},
   {"AVANZA HASTA SERVICIO PUBLICO M\xA0S CERCANO. PAGA 10 VECES LOS DADOS", 0, 0, 7},
   {"AVANZA HASTA ESTACI\xA2 M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2}
-}
+};
 #elif LANGUAGE == UNITEDKINGDOM //US NAMES
+static const char* PROGMEM unfgame = "An unfinished   game exists.    Would you like  to continue it?";
+static const char* PROGMEM yes = "YES";
+static const char* PROGMEM no = "NO";
+
 static const Properties PROGMEM properties[] = {
   {60, "OLD KENT RD.", BROWN,2,4,10,30,90,160,250,50}, 
   {60, "WHITECHAPEL RD.", BROWN,4,8,20,60,180,320,450,50},
@@ -218,7 +233,7 @@ static const LuckCard PROGMEM luckcards[] {
   {"RETROCEDE 3 CASILLAS", 0, 0, 1},
   {"AVANZA HASTA ESTACI\xA2N M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2},
   {"AVANZA HASTA CEA BERM\xA3DEZ Y 200 SI PASAS POR SALIDA", 200, 0, 3},
-  {"RESCATE POR SEGURO DE EDIFICIOS" 150, 0, 0},
+  {"RESCATE POR SEGURO DE EDIFICIOS", 150, 0, 0},
   {"VE A LA C\xA0RCEL", 0, 0, 4},
   {"VE A LA CASILLA DE SALIDA", 200, 0 ,0},
   {"ERES EL PRESIDENTE DE LA JUNTA DIRECTIVA, PAGA 50 A CADA JUGADOR", -50, 0, 5},
@@ -230,7 +245,7 @@ static const LuckCard PROGMEM luckcards[] {
   {"MULTA POR EXCESO DE VELOCIDAD", -15, 0, 0},
   {"AVANZA HASTA SERVICIO PUBLICO M\xA0S CERCANO. PAGA 10 VECES LOS DADOS", 0, 0, 7},
   {"AVANZA HASTA ESTACI\xA2 M\xA0S CERCANA. DOBLE ALQUILER", 0, 0, 2}
-}
+};
 #endif
 
 static const unsigned char PROGMEM noticeqr[] =
