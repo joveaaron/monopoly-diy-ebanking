@@ -3,6 +3,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SH110X.h>
 #include "progmemsetting.h"
+#include <Preferences.h>
 
 #define WIDTH 96
 #define HEIGHT 96
@@ -13,28 +14,29 @@ Adafruit_SH1107 display = Adafruit_SH1107(WIDTH, HEIGHT, &Wire, -1, 1000000, 100
 bool skipIntro = true;
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(115200);
-  Serial.println("SH1107 TEST SCRIPT");
+  pinMode(16, INPUT_PULLUP);
+  //Serial.begin(115200);
+  //Serial.println("SH1107 TEST SCRIPT");
   delay(1000); //wait for oled startup
   display.begin(0x3C, true); //0x3C for Wokwi, 0x78 for real display
   display.cp437(true);
   display.setTextSize(1);
   display.setTextColor(SH110X_WHITE);
+
   if(!skipIntro) {
     display.clearDisplay();
     display.setCursor(0, 0);
-    printConstChar(notice1);
+    display.print(notice1);
     display.setCursor(0,8);
-    printConstChar(notice2);
+    display.print(notice2);
     display.setCursor(0,16);
-    printConstChar(notice3);
+    display.print(notice3);
     display.setCursor(0,40);
-    printConstChar(notice4);
+    display.print(notice4);
     display.setCursor(0,72);
-    printConstChar(notice5);
+    display.print(notice5);
     display.setCursor(0,88);
-    printConstChar(notice6);
+    display.print(notice6);
     display.display();
     delay(5000);
     display.clearDisplay();
@@ -42,9 +44,11 @@ void setup() {
     display.display();
     delay(10000);
   }
+
   display.clearDisplay();
   displayActionBar(3,"SUE.", "COM\xA3N.", "SIG.");
   display.display();
+  
   display.setTextColor(2);
   display.setCursor(0,48);
   display.print(properties[0].name);
@@ -58,14 +62,18 @@ void loop() {
   //display.print("SCANNING...");
   //display.display();
   //delay(500);
-}
-
-void printConstChar(const char* a) {
-  const char* b = a;
-  while(*b != '\0') {
-    display.print(*b);
-    b++;
+  if(!digitalRead(16)) {
+    display.setTextColor(1);
+    display.setCursor(26, 7);
+    display.print("PRESSED");
+    display.display();
+  } else {
+    display.setTextColor(0);
+    display.setCursor(26, 7);
+    display.print("PRESSED");
+    display.display();
   }
+  delay(10);
 }
 
 void displayActionBar(uint8_t action_count, const char* action1, const char* action2, const char* action3) {
