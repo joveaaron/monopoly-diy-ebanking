@@ -11,11 +11,15 @@
 
 Adafruit_SH1107 display = Adafruit_SH1107(WIDTH, HEIGHT, &Wire, -1, 1000000, 100000);
 
-bool skipIntro = true;
+Preferences preferences;
+
+bool skipIntro = false;
 
 void setup() {
   pinMode(16, INPUT_PULLUP);
-  //Serial.begin(115200);
+  pinMode(17, INPUT_PULLUP);
+  pinMode(18, INPUT_PULLUP);
+  Serial.begin(115200);
   //Serial.println("SH1107 TEST SCRIPT");
   delay(1000); //wait for oled startup
   display.begin(0x3C, true); //0x3C for Wokwi, 0x78 for real display
@@ -44,11 +48,31 @@ void setup() {
     display.display();
     delay(10000);
   }
+  display.clearDisplay();
+  display.display();
+  preferences.begin("monopoly", false);
+  if(preferences.getBool("unfinished", false)) {
+    display.setCursor(0,0);
+    display.print(unfgame);
+    displayActionBar(2,yes, no, "");
+    display.display();
+    while(true) {
+      if(!digitalRead(16)) {
+        Serial.println("press 16");
+        break;
+      }
+      if(!digitalRead(18)) {
+        Serial.println("press 18");
+        preferences.putBool("unfinished", false);
+        break;
+      }
+    }
+  }
 
   display.clearDisplay();
   displayActionBar(3,"SUE.", "COM\xA3N.", "SIG.");
   display.display();
-  
+
   display.setTextColor(2);
   display.setCursor(0,48);
   display.print(properties[0].name);
