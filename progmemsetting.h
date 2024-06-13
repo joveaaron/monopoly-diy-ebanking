@@ -33,7 +33,8 @@ typedef struct {
 //                                                    |               |               |
 static const char* PROGMEM unfgame = "Existe una      partida sin     acabar. \xA8Quierescontinuarla?";
 static const char* PROGMEM yes = "SI";
-static const char* PROGMEM no = "NO";
+static const char* PROGMEM no = "NO"; //                                    
+static const char* PROGMEM selectplayers = "Elige cuantos   jugadores van a jugar";
 
 static const Properties PROGMEM properties[] = {
   {60, "RONDA DE VALENCIA", BROWN,2,4,10,30,90,160,250,50}, 
@@ -106,6 +107,7 @@ static const LuckCard PROGMEM luckcards[] {
 static const char* PROGMEM unfgame = "An unfinished   game exists.    Would you like  to continue it?";
 static const char* PROGMEM yes = "YES";
 static const char* PROGMEM no = "NO";
+static const char* PROGMEM selectplayers = "Elige cuantos   jugadores van a jugar";
 
 static const Properties PROGMEM properties[] = {
   {60, "MEDITERRANEAN AV.", BROWN,2,4,10,30,90,160,250,50}, 
@@ -178,6 +180,7 @@ static const LuckCard PROGMEM luckcards[] {
 static const char* PROGMEM unfgame = "An unfinished   game exists.    Would you like  to continue it?";
 static const char* PROGMEM yes = "YES";
 static const char* PROGMEM no = "NO";
+static const char* PROGMEM selectplayers = "Elige cuantos   jugadores van a jugar";
 
 static const Properties PROGMEM properties[] = {
   {60, "OLD KENT RD.", BROWN,2,4,10,30,90,160,250,50}, 
