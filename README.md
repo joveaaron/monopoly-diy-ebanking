@@ -19,7 +19,7 @@ It uses RFID for contactless payment and property tracking (saves in memory what
 
 **Use of any trademark or copyrighted material from MONOPOLY™ within this project is for descriptive purposes only. No infringement is intended, and no rights are claimed to any original materials belonging to Hasbro, Inc.**
 
-**For any concerns regarding the use of trademarked or copyrighted content, please contact me at webmaster@elchehost.es. Please allow for up to 14 days for a response, the email server struggles sometimes.**
+**For any concerns regarding the use of trademarked or copyrighted content, please contact me at joveaaron2@gmail.com. Please allow for up to 14 days for a response, the email server struggles sometimes.**
 
 ### Author Statement
 *I am an independent 15-year-old student from Spain who created this project as an electronics engineering challenge. This project is intended for my personal use only and not made to be financially or economically beneficious. I have made this in my free time and I will not sell or earn any kind of benefits for publishing this project.*
